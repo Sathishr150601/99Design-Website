@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/media.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="header">
+      <div class="block1">
+        <nav class="headernav">
+          <div class="container">
+            <h1 class="logo">
+              <a href="index.html">99 DESIGN AGENCY</a>
+              <br />
+              <a
+                href="tel:+91 98947 63062"
+                class="logo-des bravo"
+                target="blank style="align-items: top;"
+              ><img src="assets/images/short-icons/phone-icon.png" style="width: 18px;" alt=""> Fast Response <em class="num">+91 98947 63062</em>
+              </a>
+            </h1>
+            <div class="navbar">
+              <ul class="menu-links">
+                <li><img src="assets/images/short-icons/mapmarker-light.png" style="width: 17px;">&nbsp;&nbsp;<a class="alpha">YOUR SINCERE WEB DESIGNER</a></li>
+                <li><a class="ourdesign" style="background-color: #FF9800;border-radius:0px;"href="http://portfolio.99designagency.com/">OUR DESIGNS</a></li>
+             </ul>
+             <a class="rnd-btn clr-1 fill echo" href="tel:+919894763062">+91 98947 63062</a>
+            </div>
+          </div>
+        </nav>
+        <div class="slider">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-7">
+                <div class="slider-content">
+                  <div class="slider-item">
+                    <h2 class="golf">Create a website</h2>
+      <h1 class="charlie golf">for your Business or Personal</h1>
+      <h2 class="banner_price">Rs.5000<br/></h2>
+                        <a class="obgs delta golf" href="tel:+919894763062"><img src="assets/images/short-icons/phone-icon.png" style="width: 18px;" alt="">
+                            CALL US +91 98947 63062
+                        </a>
+                        <div class="buttons-container demo-btnz btnz">
+                            <a id="btnz-0" href="tel:+919894763062"><img src="assets/images/short-icons/phone-icon.png" style="width: 18px;" alt=""> +91 98947 63062</a>
+                            <a id="btnz-1" href="" target="_blank">DEMO</a>
+                            <a id="btnz-2" href="">Trusted by 2000+ businesses in India</a>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="col-md-5 form-box">
+                <div class="form-top">
+                  <div class="form-top-left">
+                     
+                    <h3 class="getin" align="center"> <span> <img src="assets/images/short-icons/mapmarker-dark.png"  style="width: 18px;" alt=""> BANGALORE - <img src="assets/images/short-icons/mapmarker-dark.png" style="width: 18px;" alt="">CHENNAI<br />Get in touch with us</h3>
+                    
+                  </div>
+                  </div>
+                  <div class="form-bottom">
+                <form role="form" id="form1">
+      
+                  <div class="form-group">
+                    <label class="sr-only">First name</label>
+                      <input type="text" id="name" placeholder="Name..." onblur="checkName()">
+                      <p id="name-error" class=""></p>
+                    </div>
+        
+        <div class="form-group">
+                      <label class="sr-only">Email</label>
+                      <input type="email" id="email" placeholder="Email..." onblur="checkEmail()">
+                      <p id="email-error" class=""></p>
+                    </div>
+                    <div class="form-group ">
+                        <label class="sr-only">Mobile No.</label>
+                      <input type="text" id="mobile" placeholder="Mobile No." onblur="checkMobile()">
+                      <p id="mobile-error" class=""></p>
+                    </div>
+         <div class="form-group">
+                      <label class="sr-only">Business Type</label>
+          <input type="text" id="business" placeholder="Business Type..." onblur="checkBusiness()">
+          <p id="business-error" class=""></p>
+                    </div>
+                    <div class="form-group">
+                      <label class="sr-only">Message</label>
+                      <textarea id="message" placeholder="Message..." style="height:100px" onblur="checkMessage()"></textarea>
+                      <p id="message-error" class=""></p>
+                    </div>
+                    <button type="submit" name="submit" id="submitBtn" class="btn signmebut">Contact Now</button>
+                  </form>
+  
+<script>
+const form = document.querySelector('#form1'),
+      name = document.querySelector('#name'),
+      email = document.querySelector('#email'),
+      mobile = document.querySelector('#mobile'),
+      business = document.querySelector('#business'),
+      message = document.querySelector('#message'),
+      nameError = document.getElementById("name-error"),
+      emailError = document.getElementById("email-error"),
+      mobileError = document.getElementById("mobile-error"),
+      businessError = document.getElementById("business-error"),
+      messageError = document.getElementById("message-error");
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    validateForm();
+    var formData = {
+      name: name.value,
+      email: email.value,
+      mobile: mobile.value,
+      business: business.value,
+      message: message.value
+    };
+    localStorage.setItem("formData", JSON.stringify(formData));
+  });
+
+  function validateForm(){
+    if(name.value.trim() == "") {
+      nameError.innerText = "Name cannot be empty";
+    } else if(email.value.trim() == "") {
+      emailError.innerText = "email cannot be empty";
+    } else if(mobile.value.trim() == "") {
+      mobileError.innerText = "Mobile No. cannot be empty";
+    } else if(business.value.trim() == "") {
+      businessError.innerText = "Business Type cannot be empty";
+    } else if(message.value.trim() == "") {
+      messageError.innerText = "please enter some message";
+    } else {
+      alert("Form Submitted Successfully");
+    }
+  }
+
+  function checkName() {
+    if(name.value.trim() == "") {
+      nameError.innerText = "Name cannot be empty";
+    } else if(name.value.trim().length < 3) {
+      nameError.innerText = "name must be more than 3 characters";
+    } else if(isNameValid(name.value)){
+      nameError.innerText = "";
+      localStorage.setItem('name', name);
+    } else {
+      nameError.innerText = "name must contain alphabets only";
+    }
+  }
+
+  function isNameValid(name) {
+    const reg = /^[A-Za-z]+$/;
+    return reg.test(name);
+  }
+
+  function checkEmail() {
+    if(email.value.trim() == "") {
+      emailError.innerText = "email cannot be empty";
+    } else if(isEmailValid(email.value)){
+      emailError.innerText = "";
+    } else {
+      emailError.innerText = "please ensure that the email contains @ and . symbol";
+    }
+  }
+  
+  function isEmailValid(email){
+    const reg = /^\w+([\.-]?\w+)*@\w+([\.-]()?\w+)*(\.\w{2,3})+$/;
+    return reg.test(email);
+  }
+
+  function checkMobile() {
+    if(mobile.value.trim() == "") {
+      mobileError.innerText = "Mobile No. cannot be empty";
+    } else if(mobile.value.trim().length < 10 || mobile.value.trim().length > 10) {
+      mobileError.innerText = "Mobile No. must contain only 10 digits";
+    } else if(isMobileValid(mobile.value)){
+      mobileError.innerText = "";
+    } else {
+      mobileError.innerText = "Mobile No. must contain numbers only";
+    }
+  }
+
+  function isMobileValid(mobile) {
+    const reg = /^[0-9]+$/;
+    return reg.test(mobile);
+  }
+
+  function checkBusiness() {
+    if(business.value.trim() == "") {
+      businessError.innerText = "Business Type cannot be empty";
+    } else if(business.value.trim().length < 3) {
+      businessError.innerText = " Please enter more than 3 characters";
+    } else if(isBusinessValid(business.value)){
+      businessError.innerText = "";
+    } else {
+      businessError.innerText = "name must contain alphabets only";
+    }
+  }
+
+  function isBusinessValid(business) {
+    const reg = /^[A-Za-z]+$/;
+    return reg.test(business);
+  }
+
+  function checkMessage() {
+    if(message.value.trim() == "") {
+      messageError.innerText = "please enter some message";
+    } else {
+      messageError.innerText = "";
+    }
+  }
+
+</script>  
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="container foxtrot" id="icon-section">     
+      <!--Start Row 1-->
+      <div class="row">  
+        <div class="col-md-2 col-xs-4">
+          <div class="product">
+            <div class="icon" style="text-align:center;">
+              <a href="https://www.tamilmatrimony.com/"><img src="assets/images/icon/matrimonial.png" width="60" alt=""></a>
+            </div>
+            <h3 class="icon-section_title" style="text-align:center;">Matrimonial Website</h3>              
+          </div>
+        </div>
+        <div class="col-md-2 col-xs-4">
+          <div class="product">
+            <div class="icon" style="text-align:center;">
+              <a href="https://www.olx.in/"><img src="assets/images/icon/olx.png" width="60" alt=""></a>
+            </div>
+            <h3 class="icon-section_title" style="text-align:center;">OLX Application</h3>              
+          </div>
+        </div>
+        <div class="col-md-2 col-xs-4">
+          <div class="product">
+            <div class="icon" style="text-align:center;">
+              <a href="https://www.99acres.com/"><img src="assets/images/icon/99acres.png" width="60" alt=""></a>
+            </div>
+            <h3 class="icon-section_title" style="text-align:center;">Real Estate</h3>        
+          </div>
+        </div>
+        <div class="col-md-2 col-xs-4">
+          <div class="product">
+            <div class="icon" style="text-align:center;">
+              <a href="https://www.tnprivatejobs.tn.gov.in/"><img src="assets/images/icon/job_portal.png" width="60" alt=""></a>
+            </div>
+            <h3 class="icon-section_title" style="text-align:center;">Online job Portal</h3>              
+          </div>
+        </div>
+        <div class="col-md-2 col-xs-4">
+          <div class="product">
+            <div class="icon" style="text-align:center;">
+              <a href="https://therealnews.com/"><img src="assets/images/icon/newspaper.png" width="60" alt=""></a>
+            </div>
+            <h3 class="icon-section_title" style="text-align:center;">News Website</h3>              
+          </div>
+        </div>
+        <div class="col-md-2 col-xs-4">
+          <div class="product">
+            <div class="icon" style="text-align:center;">
+              <a href="https://tinder.com/"><img src="assets/images/icon/dating.png" width="60" alt=""></a>
+            </div>
+            <h3 class="icon-section_title" style="text-align:center;">Dating Website</h3>              
+          </div>
+        </div>
+      </div><br />
+      <!--End Row 1-->
+      <!--Start Row 2-->
+      <div class="row">
+        <div class="col-md-2 col-xs-4">
+          <div class="product">
+            <div class="icon" style="text-align:center;">
+              <a href="https://www.goibibo.com/cars/"><img src="assets/images/icon/cab.png" width="60" alt=""></a>
+            </div>
+            <h3 class="icon-section_title" style="text-align:center;">Online Cab Booking</h3>              
+          </div>
+        </div>
+        <div class="col-md-2 col-xs-4">
+          <div class="product">
+            <div class="icon" style="text-align:center;">
+              <a href="https://www.redbus.in/bus-tickets"><img src="assets/images/icon/bus.png" width="60" alt=""></a>
+            </div>
+            <h3 class="icon-section_title" style="text-align:center;">Online Bus Booking</h3>              
+          </div>
+        </div>
+        <div class="col-md-2 col-xs-4">
+          <div class="product">
+            <div class="icon" style="text-align:center;">
+              <a href=""><img src="assets/images/icon/movie.png" width="60" alt=""></a>
+            </div>
+            <h3 class="icon-section_title" style="text-align:center;">Movie Ticketing</h3>              
+          </div>
+        </div>
+        <div class="col-md-2 col-xs-4">
+          <div class="product">
+            <div class="icon" style="text-align:center;">
+              <a href=""><img src="assets/images/icon/support.png" width="60" alt=""></a>
+            </div>
+            <h3 class="icon-section_title" style="text-align:center;">Ticket Software</h3>              
+          </div>
+        </div>
+        <div class="col-md-2 col-xs-4">
+          <div class="product">
+            <div class="icon" style="text-align:center;">
+              <a href="https://in.bookmyshow.com/"><img src="assets/images/icon/food.png" width="60" alt=""></a>
+            </div>
+            <h3 class="icon-section_title" style="text-align:center;">Online Food Order</h3>              
+          </div>
+        </div>
+        <div class="col-md-2 col-xs-4">
+          <div class="product">
+            <div class="icon" style="text-align:center;">
+              <a href="https://www.booking.com/"><img src="assets/images/icon/hotel.png" width="60" alt=""></a>
+            </div>
+            <h3 class="icon-section_title" style="text-align:center;">Hotel Booking</h3>              
+          </div>
+        </div>
+      </div><br />
+      <!--End Row 2-->
+      <!--Start Row 3-->
+      <div class="row">
+          <div class="col-md-2 col-xs-4">
+            <div class="product">
+              <div class="icon" style="text-align:center;">
+                <a href="https://www.rentalcars.com/"><img src="assets/images/icon/key.png" width="60" alt=""></a>
+              </div>
+              <h3 class="icon-section_title" style="text-align:center;">Car Rental</h3>              
+            </div>
+          </div>
+          <div class="col-md-2 col-xs-4">
+            <div class="product">
+              <div class="icon" style="text-align:center;">
+                <a href="https://cloudmlmsoftware.com/mlm-plan/mlm-binary-plan"><img src="assets/images/icon/binary_mlm.png" width="60" alt=""></a>
+              </div>
+              <h3 class="icon-section_title" style="text-align:center;">Binary MLM</h3>              
+            </div>
+          </div>
+          <div class="col-md-2 col-xs-4">
+            <div class="product">
+              <div class="icon" style="text-align:center;">
+                <a href="https://www.shopify.in/"><img src="assets/images/icon/ecommerce_vendor.png" width="60" alt=""></a>
+              </div>
+              <h3 class="icon-section_title" style="text-align:center;">Ecommerrce Website</h3>              
+            </div>
+          </div>
+          <div class="col-md-2 col-xs-4">
+            <div class="product">
+              <div class="icon" style="text-align:center;">
+                <a href="https://www.click.in/"><img src="assets/images/icon/classified.png" width="60" alt=""></a>
+              </div>
+              <h3 class="icon-section_title" style="text-align:center;">Classified</h3>              
+            </div>
+          </div>
+          <div class="col-md-2 col-xs-4">
+            <div class="product">
+              <div class="icon" style="text-align:center;">
+                <a href="https://www.surplex.com/"><img src="assets/images/icon/auction.png" width="60" alt=""></a>
+              </div>
+              <h3 class="icon-section_title" style="text-align:center;">Auction Management</h3>              
+            </div>
+          </div>
+          <div class="col-md-2 col-xs-4">
+            <div class="product">
+              <div class="icon" style="text-align:center;">
+                <a href="https://www.tscsindia.org/"><img src="assets/images/icon/blood_bank.png" width="60" alt=""></a>
+              </div>
+              <h3 class="icon-section_title" style="text-align:center;">Blood Bank</h3>              
+            </div>
+          </div>
+        </div><br />
+        <!--End Row 3-->
+        <!--Start Row 4-->
+        <div class="row">
+          <div class="col-md-2 col-xs-4">
+            <div class="product">
+              <div class="icon" style="text-align:center;">
+                <a href="https://www.gigapromo.in/"><img src="assets/images/icon/crowd.png" width="60" alt=""></a>
+              </div>
+              <h3 class="icon-section_title" style="text-align:center;">Croud Funding</h3>              
+            </div>
+          </div>
+            <div class="col-md-2 col-xs-4">
+              <div class="product">
+                <div class="icon" style="text-align:center;">
+                  <a href="https://oeru.org/"><img src="assets/images/icon/video.png" width="60" alt=""></a>
+                </div>
+                <h3 class="icon-section_title" style="text-align:center;">Video Classes Tutoring</h3>              
+              </div>
+            </div>
+            <div class="col-md-2 col-xs-4">
+              <div class="product">
+                <div class="icon" style="text-align:center;">
+                  <a href="https://in.searchley.com/"><img src="assets/images/icon/exam.png" width="60" alt=""></a>
+                </div>
+                <h3 class="icon-section_title" style="text-align:center;">Examination Website</h3>              
+              </div>
+            </div>
+            <div class="col-md-2 col-xs-4">
+              <div class="product">
+                <div class="icon" style="text-align:center;">
+                  <a href="https://app.shiprocket.in/"><img src="assets/images/icon/logistics.png" width="60" alt=""></a>
+                </div>
+                <h3 class="icon-section_title" style="text-align:center;">Courier and Logistics</h3>              
+              </div>
+            </div>
+            <div class="col-md-2 col-xs-4">
+              <div class="product">
+                <div class="icon" style="text-align:center;">
+                  <a href="https://en.wikipedia.org/wiki/Service_provider"><img src="assets/images/icon/urban.png" width="60" alt=""></a>
+                </div>
+                <h3 class="icon-section_title" style="text-align:center;">Service Provider</h3>              
+              </div>
+            </div>
+            <div class="col-md-2 col-xs-4">
+              <div class="product">
+                <div class="icon" style="text-align:center;">
+                  <a href="https://www.education.com/"><img src="assets/images/icon/education.png" width="60" alt=""></a>
+                </div>
+                <h3 class="icon-section_title" style="text-align:center;">Education Website</h3>              
+              </div>
+            </div>
+          </div><br />
+          <!--End row 4-->
+    </div>
+    <!--End Icons-->
+  <!--Start Pricing-->
+  <div class="cost section">
+    <div class="cost-margin">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-title="Our pricing plans">Pricing</h2>
+            </div>
+            <div class="cost-content section-content">
+      <div class="pack">
+                    <div class="pack-icon">
+                        <img src="assets/images/pricing-plans/plan-1.svg" alt="plan-1">
+                    </div>
+                    <h3 class="pack-title">Economic for Startups</h3>                     
+                    <h2 class="pack-price">Rs.5000</h2>
+                    <ul>
+                        <li><span>Free Domain</span></li>
+                        <li><span>Free SSL Certificate</span></li>
+                        <li>Delivery : 2-3 Days</li>
+                        <li>Dynamic Website - CMS</li>
+                        <li><span style="color:#ff9800">Admin Panel </span></li>
+                        <li>Home Page</li>
+                        <li>Profile Page</li>
+                        <li><span style="color:#ff9800">15 Sub Pages</span></li>
+                        <li><span style="color:#ff9800">Services or Product Detail Page</span></li>
+                        <li>Testimonials or Events Page</li>
+                        <li>Dynamic Gallery/Portfolio</li>
+                        <li>Enquiry or Contact Form</li>
+                        <li><span style="color:#ff9800">Readymade Themes</span></li>
+                        <li><span style="color:#ff9800">SEO Friendly Website </span> </li>
+                        <li>Live Chat or Whatsapp Button</li>
+                        <li><span>Call to Action Button</span></li>
+                    </ul>
+                    <a class="pricing-btn" href="#">+91 98947 63062</a>
+                </div>
+                <div class="pack">
+                    <div class="pack-icon">
+                        <img src="assets/images/pricing-plans/plan-2.svg" alt="plan-2">
+                    </div>
+                    <h3 class="pack-title">Standard</h3>
+                    <h2 class="pack-price">Rs.15000</h2>
+                    <ul>
+                        <li><span>1</span> - Free Domain Name .com</li>
+                        <li><span>Free SSL Certificate</span></li>
+                        <li>Delivery : 5 Days</li>
+                        <li>Dynamic Website - CMS</li>
+                        <li><span style="color:#ff9800">Admin Panel </span></li>
+                        <li><span style="color:#ff9800">Unlimited Services or Product Listing</span></li>
+                        <li><span style="color:#ff9800">Unlimited  Sub Pages for services</span></li>
+                        <li><span>Readymade Themes</span> </li>
+                        <li><span style="color:#ff9800">Video Page</span> </li>
+                        <li><span style="color:#ff9800">Dynamic Gallery/Portfolio</span></li>
+                        <li>1 Contact Form</li>
+                        <li>Free Business Email Accounts</li>
+                        <li><span>SEO Friendly</span> Website</li>
+                        <li><span>Unlimited FREE Hosting</space></li>
+                        <li><span>Live Chat or Whatsapp Button</span></li>
+                        <li><span>Call to Action Button</span></li>
+                    </ul>
+                    <a class="pricing-btn" href="#">+91 98947 63062</a>
+                </div>
+                <div class="pack">
+                    <div class="pack-icon">
+                        <img src="assets/images/pricing-plans/plan-3.svg" alt="plan-3">
+                    </div>
+                    <h3 class="pack-title">Corporate</h3>
+                    <h2 class="pack-price">Rs.25000</h2>
+                   <ul>
+                        <li><span>1</span> - Free Domain Name .com</li>
+                        <li><span>Free SSL Certificate</span></li>
+                        <li>Delivery : 10 Days</li>
+                        <li>Dynamic Website - CMS</li>
+                        <li><span style="color:#ff9800">Admin Panel </span></li>
+                        <li><span style="color:#ff9800">Unlimited Services Listing</span></li>
+                        <li><span style="color:#ff9800">Unlimited Service Sub Page Listing</span></li>
+                        <li><span style="color:#ff9800">Unlimited Product Listing</span></li>
+                        <li><span style="color:#ff9800">Unlimited Product Sub Page Listing</span></li>
+                        <li><span style="color:#ff9800">CUSTOM DESIGNS</span> </li>
+                        <li><span style="color:#ff9800">Video Page</span> </li>
+                        <li><span style="color:#ff9800">Dynamic Gallery/Portfolio</span></li>
+                        <li><span style="color:#ff9800">News & Events</span></li>
+                        <li><span style="color:#ff9800">BLOG</span> </li>
+                        <li>1 Contact Form</li>
+                        <li>1 Complaints Form</li>
+                        <li>Business Email Accounts</li>
+                        <li><span>SEO Friendly</span> Website</li>
+                        <li><span>Unlimited FREE Hosting</space></li>
+                        <li><span>Live Chat or Whatsapp Button</span></li>
+                        <li><span>Call to Action Button</span></li>
+                    </ul>
+                    <a class="pricing-btn" href="#">+91 98947 63062</a>
+                </div>
+                <div class="pack">
+                    <div class="pack-icon">
+                        <img src="assets/images/pricing-plans/plan-3.svg" alt="plan-3">
+                    </div>
+                    <h3 class="pack-title">Small eCommerce</h3>
+                    <h2 class="pack-price">Rs.15000</h2>
+                    <ul>
+                        <li><span>1</span> - Free Domain Name</li>
+                        <li>Delivery : 3 Days</li>
+                        <li>Dynamic Website - CMS</li>
+                        <li style="color:#e350b8;">Up to 10 Categories</li>
+                        <li style="color:#e350b8;">Up to 100 Products</li>
+                        <li>Online Payment Integration</li>
+                        <li>COD Option</li>
+                        <li> <span style="color:#ff9800">Free Shipping & Fixed Shipping Price</li>
+                        <li> <span style="color:#ff9800">Readymade Themes</li>
+                        <li>1 Enquiry Form</li>
+                        <li><span>Admin</span> Panel</li>
+                        <li>Business Email Account</li>
+                        <li><span>Unlimited</span> Space</li>
+                        <li><span>Free Live Chat or Whatsapp Button</span></li>
+                        <li><span>Call to Action Button</span></li>
+                    </ul>
+                    <a class="pricing-btn" href="#">+91 98947 63062</a>
+                </div>
+                <div class="pack">
+                    <div class="pack-icon">
+                        <img src="assets/images/pricing-plans/plan-3.svg" alt="plan-3">
+                    </div>
+                    <h3 class="pack-title">Bronze eCommerce</h3>
+                    <h2 class="pack-price">Rs.25000</h2>
+                    <ul>
+                      <li><span>1</span> - Free Domain Name</li>
+                      <li>Delivery : 5 Days</li>
+                      <li>Dynamic Website - CMS</li>
+                      <li style="color:#e350b8;">Unlimited Categories</li>
+                      <li style="color:#e350b8;">Unlimited Products</li>
+                      <li style="color:#e350b8;">Coupon Code</li>
+                      <li>Online Payment Integration</li>
+                      <li>COD Option</li>
+                      <li> <span style="color:#ff9800">Free Shipping & Fixed Shipping Price</li>
+                      <li> <span style="color:#ff9800">Pincode Based Delivery Settings</li>
+                      <li> <span style="color:#ff9800">Local Delivery Options</li>
+                      <li> <span style="color:#ff9800">Readymade Themes</li>
+                      <li>1 Enquiry Form</li>
+                      <li><span>Admin</span> Panel</li>
+                      <li>Business Email Accounts</li>
+                      <li><span>Unlimited</span> Space</li>
+                      <li><span>Free Live Chat or Whatsapp Button</span></li>
+                      <li><span>Call to Action Button</span></li>
+                    </ul>
+                    <a class="pricing-btn" href="#">+91 98947 63062</a>
+            </div>
+            <div class="pack">
+                    <div class="pack-icon">
+                        <img src="assets/images/pricing-plans/plan-3.svg" alt="plan-3">
+                    </div>
+                    <h3 class="pack-title">Gold eCommerce</h3>
+                    <h3 class="plan-title1" style="font-size:15px;color:#ff9800">FREE ANDORID APP</h3>
+                    <h2 class="pack-price">Rs.35000</h2>
+                     <ul>
+                      <li><span>1</span> - Free Domain Name</li>
+                      <li>Delivery : 15 Days</li>
+                      <li>Dynamic Website - CMS</li>
+                      <li style="color:#e350b8;">Unlimited Categories</li>
+                      <li style="color:#e350b8;">Unlimited Products</li>
+                      <li style="color:#e350b8;">Coupon Code</li>
+                      <li>Online Payment Integration</li>
+                      <li>COD Option</li>
+                      <li> <span style="color:#ff9800">Free Shipping & Fixed Shipping Price</li>
+                      <li> <span style="color:#ff9800">Pincode Based Delivery Settings</li>
+                      <li> <span style="color:#ff9800">Local Delivery Options</li>
+                      <li> <span style="color:#ff9800">Weight Based Shipping Options</li>
+                      <li> <span style="color:#ff9800">Blog with Auto Facebook Sharing</li>
+                      <li> <span style="color:#ff9800">Readymade THEMES</li>
+                      <li>1 Enquiry Form</li>
+                      <li><span>Admin</span> Panel</li>
+                      <li>Business Email Accounts</li>
+                      <li><span>Unlimited</span> Space</li>
+                      <li><span>Free Live Chat or Whatsapp Button</span></li>
+                      <li><span>Call to Action Button</span></li>
+                    </ul>
+                    <a href='tel:+91 98947 63062' target='blank'class="pricing-btn" href="#">+91 98947 63062</a>
+              </div>
+        </div>
+    </div>
+</div>
+<!--End Pricing-->
+
+<!-- Start About -->
+<div class="about">
+  <div class="container">
+      <div class="section-title">
+          <h2 data-title="who we are">About us</h2>
+      </div>
+      <div class="about-content section-content">
+          <div class="about-img">
+              <a href="#">
+                  <img src="assets/images/about_99.jpg" alt="about-video">
+                
+              </a>
+          </div>
+          <div class="about-text section-text">
+              <h3 class="section-sub-heading">Our Mission</h3>
+              <p>
+                 99DesignAgency is an advertising agency that has evolved to meet the changing needs of marketing in the digital age.
+
+Digital Agencies bring the graphic design,web design and digital marketing together with new technology and modern marketing techniques. The result is a highly result oriented websites with powerfull branding.
+99DesignAgency specialise in cost effective solutions that only target the audience you are interested in.
+we work with clients to unlock value through creativity, technology, and business-minded thinking.
+              </p>
+              
+          </div>
+      </div>
+  </div>
+</div>
+<!-- End About -->
+<!-- Start Services -->
+<div id="services" class="services section padding0">
+  <div class="div-margin">
+      <div class="container">
+          <div class="section-title">
+              <h2 data-title="What we do">Services</h2>
+          </div>
+          <div class="services-content section-content">
+              <div class="services-item">
+                  <div class="services-item-icon">
+                      <img src="assets/images/services/services-1.svg" alt="services-1">
+                  </div>
+                  <h3 class="services-title">Graphic Design</h3>
+                  <p>
+                     There are three responses to a piece of design – yes, no, and WOW!
+                  </p>
+                  <div class="button-container">
+                      <a class="pricing-btn" href="#">CALL US +91 98947 63062</a>
+                  </div>
+              </div>
+              <div class="services-item">
+                  <div class="services-item-icon">
+                      <img src="assets/images/services/services-2.svg" alt="services-2">
+                  </div>
+                  <h3 class="services-title">Web Design</h3>
+                  <p>
+                      Website without visitors is like a ship lost in the horizon
+                  </p>
+                  <div class="button-container">
+                      <a class="pricing-btn" href="#">CALL US +91 98947 63062</a>
+                  </div>
+              </div>
+              <div class="services-item">
+                  <div class="services-item-icon">
+                      <img src="assets/images/services/services-3.svg" alt="services-3">
+                  </div>
+                  <h3 class="services-title">Marketing</h3>
+                  <p>
+                      Powering your DIGITAL DREAMS,taking your BUSINESS AHEAD
+                  </p>
+                  <div class="button-container">
+                      <a class="pricing-btn" href="#">CALL US +91 98947 63062</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- End Services -->
+
+<!--Start contact-->
+<div id="contact" class="contact section">
+  <div class="container">
+      <div class="section-title">
+          <h2 data-title="Get in touch">Contact</h2>
+      </div>
+<div class='row'>
+<div class='col-lg-6'>
+<ul>
+
+<li><i><img style="margin-top: 10px; width: 24px;" src="assets/images/short-icons/home-icon.png" alt=""></i><p>G-Block Ground Floor
+Ponnurangam Rd
+R S Puram
+Coimbatore - 641002</p> </li>
+<li><i><img style="margin-top: 10px; width: 24px;" src="assets/images/short-icons/home-icon.png" alt=""></i><p> Kensington Road,Kalahalli
+Near MEG Gate
+Bangalore 560042</p> </li>
+<li><i><img style="margin-top: 10px; width: 24px;" src="assets/images/short-icons/msg-icon.png" alt=""></i><a href='mailto:info@99DesignAgency.com'> info@99DesignAgency.com</a></li>
+<li><i><img style="margin-top: 10px; width: 24px;" src="assets/images/short-icons/phone-icon.png" alt=""></i><a href='tel:+91 98947 63062'>+91 98947 63062</a></li>
+</ul>
+</div>
+<div class='col-lg-6'>
+<div class="contact-content section-content">
+          <form class="contact-form" id="form2">
+              <div class="small-fields">
+                  <div class="form-group">
+                      <input placeholder="Name" type="text" name="name2" id="name2" onblur="checkName2()">
+                      <p id="name-error2"></p>
+                  </div>
+                  <div class="form-group">
+                      <input placeholder="Email" type="email" name="email2" id="email2" onblur="checkEmail2()">
+                      <p id="email-error2"></p>
+                  </div>
+                  <div class="form-group">
+                      <input placeholder="Phone" type="tel" name="mobile2" id="mobile2" onblur="checkMobile2()">
+                      <p id="mobile-error2"></p>
+                  </div>
+                  <div class="form-group">
+                      <input placeholder="Business Type"  type="text" name="business2" id="business2" onblur="checkBusiness2()">
+                      <p id="business-error2"></p>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <textarea placeholder='Message' name="message2" id="message2" style="height:100px" onblur="checkMessage2()"></textarea>
+                  <p id="message-error2"></p>
+              </div>
+              <div class="button-container">
+                  <button class="full-view contact-btn" type="submit" id="submit2">Send Message!</button>
+              </div>
+          </form>
+      </div>
+</div>
+<script>
+  const form2 = document.querySelector('#form2'),
+        name2 = document.querySelector('#name2'),
+        email2 = document.querySelector('#email2'),
+        mobile2 = document.querySelector('#mobile2'),
+        business2 = document.querySelector('#business2'),
+        message2 = document.querySelector('#message2'),
+        nameError2 = document.getElementById("name-error2"),
+        emailError2 = document.getElementById("email-error2"),
+        mobileError2 = document.getElementById("mobile-error2"),
+        businessError2 = document.getElementById("business-error2"),
+        messageError2 = document.getElementById("message-error2");
+  
+    form2.addEventListener("submit", (event) => {
+      event.preventDefault();
+      validateForm2();
+      var formData2 = {
+        name: name2.value,
+        email: email2.value,
+        mobile: mobile2.value,
+        business: business2.value,
+        message: message2.value
+      };
+      localStorage.setItem("formData2", JSON.stringify(formData2));
+    });
+  
+    function validateForm2(){
+      if(name2.value.trim() == "") {
+        nameError2.innerText = "Name cannot be empty";
+      } else if(email2.value.trim() == "") {
+        emailError2.innerText = "email cannot be empty";
+      } else if(mobile2.value.trim() == "") {
+        mobileError2.innerText = "Mobile No. cannot be empty";
+      } else if(business2.value.trim() == "") {
+        businessError2.innerText = "Business Type cannot be empty";
+      } else if(message2.value.trim() == "") {
+        messageError2.innerText = "please enter some message";
+      } else {
+        alert("Form Submitted Successfully");
+      }
+    }
+  
+    function checkName2() {
+      if(name2.value.trim() == "") {
+        nameError2.innerText = "Name cannot be empty";
+      } else if(name2.value.trim().length < 3) {
+        nameError2.innerText = "name must be more than 3 characters";
+      } else if(isNameValid(name2.value)){
+        nameError2.innerText = "";
+      } else {
+        nameError2.innerText = "name must contain alphabets only";
+      }
+    }
+  
+    function isNameValid(name2) {
+      const reg = /^[A-Za-z]+$/;
+      return reg.test(name2);
+    }
+  
+    function checkEmail2() {
+      if(email2.value.trim() == "") {
+        emailError2.innerText = "email cannot be empty";
+      } else if(isEmailValid(email2.value)){
+        emailError2.innerText = "";
+      } else {
+        emailError2.innerText = "please ensure that the email contains @ and . symbol";
+      }
+    }
+    
+    function isEmailValid(email2){
+      const reg = /^\w+([\.-]?\w+)*@\w+([\.-]()?\w+)*(\.\w{2,3})+$/;
+      return reg.test(email2);
+    }
+  
+    function checkMobile2() {
+      if(mobile2.value.trim() == "") {
+        mobileError2.innerText = "Mobile No. cannot be empty";
+      } else if(mobile2.value.trim().length < 10 || mobile2.value.trim().length > 10) {
+        mobileError2.innerText = "Mobile No. must contain only 10 digits";
+      } else if(isMobileValid(mobile2.value)){
+        mobileError2.innerText = "";
+      } else {
+        mobileError2.innerText = "Mobile No. must contain numbers only";
+      }
+    }
+  
+    function isMobileValid(mobile2) {
+      const reg = /^[0-9]+$/;
+      return reg.test(mobile2);
+    }
+  
+    function checkBusiness2() {
+      if(business2.value.trim() == "") {
+        businessError2.innerText = "Business Type cannot be empty";
+      } else if(business2.value.trim().length < 3) {
+        businessError2.innerText = " Please enter more than 3 characters";
+      } else if(isBusinessValid(business2.value)){
+        businessError2.innerText = "";
+      } else {
+        businessError2.innerText = "name must contain alphabets only";
+      }
+    }
+  
+    function isBusinessValid(business2) {
+      const reg = /^[A-Za-z]+$/;
+      return reg.test(business2);
+    }
+  
+    function checkMessage2() {
+      if(message2.value.trim() == "") {
+        messageError2.innerText = "please enter some message";
+      } else {
+        messageError2.innerText = "";
+      }
+    }
+</script>
+      
+</div>
+  </div>
+</div>
+<!--End Contact-->
+<!-- Footer -->
+<footer>
+  <div class="div-margin">
+      <div class="container">
+          <div class="footer-top">
+              <div class="widget links">
+                  <h3 class="widget-title">Creative Works</h3>
+                  <div class="widget-content">
+                      <ul>
+                          <li><a href="#">Creative Website Designing</a></li>
+                          <li><a href="#">Creative Brochures/Fliers</a></li>
+                          <li><a href="#">Packaging Designs</a></li>
+                          <li><a href="#">Poster/Visiting Cards</a></li>
+    
+          <li><a style="color:red;" href="">Terms and Conditions</a></li>
+                      </ul>
+                  </div>
+              </div>
+             
+  <div class="widget links">
+                  <h3 class="widget-title">Digital Marketing</h3>
+                  <div class="widget-content">
+                      <ul>
+                          <li><a href="#">Guarenteed Google 1st Page Result</a></li>
+                          <li><a href="#">Facebook Marketing</a></li>
+                          <li><a href="#">Youtube Marketing</a></li>
+                          <li><a href="#">Adwords PPC Campaigns</a></li>
+                      </ul>
+                  </div>
+              </div>
+                <div class="widget links">
+                  <h3 class="widget-title">Coimbatore</h3>
+                  <div class="widget-content">
+                      <ul>
+                          <li><a href="#">G-Block Ground Floor</a></li>
+                          <li><a href="#">Ponnurangam Rd</a></li>
+                          <li><a href="#">R S Puram </a></li>
+                          <li><a href="#">Coimbatore - 641002</a></li>
+                           <li class="phone">                                     <a href="tel:+919600525936" target="blank"><img style="width: 18px" src="assets/images/short-icons/phone-icon.png" alt=""> 
+        &nbsp;<span class='contact-border'>+91 98947 63062</span></a>
+                                  
+                                 
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="widget contact-widget">
+                  <h3 class="widget-title">Bangalore</h3>
+                  <div class="widget-content">
+          <ul>
+                         
+                            <li class="address"><img style="width: 18px" src="assets/images/short-icons/home-icon.png" alt="">
+                            Kensington Road,Kalahalli
+                         </li>
+                    <li class="address"><img style="width: 18px" src="assets/images/short-icons/home-icon.png" alt="">
+                             Near MEG Gate
+                         </li>
+                         <li class="address"><img style="width: 18px" src="assets/images/short-icons/home-icon.png" alt="">
+                             Bangalore 560042
+
+
+                         </li>
+                          <li class="email" style="height:30px;"><img style="width: 18px" src="assets/images/short-icons/msg-icon.png" alt="">
+                              info@99DesignAgency.com
+                          </li>
+        
+                          <li class="phone" style="margin-top:10px;">
+                              <a style="color: #FFF;border: 1px solid #FFF;padding:4px 10px;border-radius:2px;margin-top:10px;font-size:12px;"><img style="width: 18px" src="assets/images/short-icons/phone-icon.png" alt=""> + 91 98947 63062</a>
+                          </li>
+        
+                      </ul>
+                  </div>
+              </div>
+              <a class='whatsapp' href="" target="_blank" style="position:fixed; right:8px; bottom:10px; z-index:999999">
+<img src="assets/images/whatsapp_icon.png" >
+</a> 
+          <div class="footer-bottom">
+              <div>
+                  
+              </div>
+              <div style="color:#fff;">
+                   &nbsp;&copy;  2022 - 99DesignAgency.com </div>
+          </div>
+      </div>
+  </div>
+</footer>
+<!-- End Footer -->
+<!--Mobile Footer-->
+<section class="mobile-footer">
+  <div class="container">
+  <div class="row">
+  <div class="col-xs-3">
+  <a href="" class="footer-mobile-menu" target="_blank">
+<img src="assets/images/short-icons/ecom.png" alt="">  </br>
+  ecommerce</a>
+  </div>
+  <div class="col-xs-3">
+  <a  class="footer-mobile-menu">
+    <img style="width: 20px;" src="assets/images/short-icons/mapmarker-light.png" alt="">
+  </br>
+  Location</a>
+  </div>
+  
+  <div class="col-xs-3">
+  <a href="tel:+91 98947 63062" target="blank" class="footer-mobile-menu">
+    <img style="width: 20px;" src="assets/images/short-icons/phone-icon.png" alt="">
+  </br>
+  Call</a>
+  </div>
+  <div class="col-xs-3">
+  <a href="" target="blank" class="footer-mobile-menu">
+    <img style="width: 20px;" src="assets/images/short-icons/wp.png" alt="">
+  </br>
+  Whatsapp</a>
+  </div>
+  </div>
+  </div>
+  </section>
+<!-- End Mobile Footer-->
+</div>
+  </div>
+</div>
+  </body>
+</html>
